@@ -14,6 +14,7 @@ See [BACKLOG.md](BACKLOG.md) for tools, applications, and ideas being considered
 | Tool | Purpose | Installation |
 |------|---------|--------------|
 | WezTerm | Terminal emulator | [Instructions](https://wezterm.org/installation.html) |
+| Fish | Shell | [Instructions](https://fishshell.com/) |
 | Zed | Code editor | [Instructions](https://zed.dev/docs/installation) |
 | Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
 | Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |
