@@ -53,6 +53,9 @@ wezterm.on('format-tab-title', function(tab)
   return ' ' .. (tab.tab_index + 1) .. ': ' .. name .. ' '
 end)
 
+-- Native Wayland draws a gray client-side frame above the window on Hyprland.
+config.enable_wayland = false
+
 -- Ligatures are enabled by default in WezTerm.
 config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 14.0
