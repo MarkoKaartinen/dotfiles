@@ -57,10 +57,16 @@ end)
 -- inherit the current pane's directory, so spawn them with an explicit cwd.
 config.default_cwd = wezterm.home_dir
 local home_tab = wezterm.action.SpawnCommandInNewTab { cwd = wezterm.home_dir }
+local home_window = wezterm.action.SpawnCommandInNewWindow { cwd = wezterm.home_dir }
 config.keys = {
   { key = 't', mods = 'CTRL|SHIFT', action = home_tab },
-  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnCommandInNewWindow { cwd = wezterm.home_dir } },
+  { key = 'n', mods = 'CTRL|SHIFT', action = home_window },
 }
+-- macOS uses Cmd for the same shortcuts.
+if wezterm.target_triple:find('darwin') then
+  table.insert(config.keys, { key = 't', mods = 'SUPER', action = home_tab })
+  table.insert(config.keys, { key = 'n', mods = 'SUPER', action = home_window })
+end
 wezterm.on('new-tab-button-click', function(window, pane, button, default_action)
   if button == 'Left' then
     window:perform_action(home_tab, pane)
