@@ -22,6 +22,37 @@ config.default_prog = { find_fish(), '-l' }
 
 config.color_scheme = 'Catppuccin Mocha'
 
+-- Put the window buttons into the tab bar and color the bar from the scheme.
+config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
+local scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
+if scheme then
+  config.window_frame = {
+    active_titlebar_bg = scheme.background,
+    inactive_titlebar_bg = scheme.background,
+  }
+  local bg = wezterm.color.parse(scheme.background)
+  config.colors = {
+    tab_bar = {
+      active_tab = { bg_color = bg:lighten(0.12), fg_color = scheme.foreground },
+      inactive_tab = { bg_color = scheme.background, fg_color = scheme.ansi[8] },
+      inactive_tab_hover = { bg_color = bg:lighten(0.06), fg_color = scheme.foreground },
+      new_tab = { bg_color = scheme.background, fg_color = scheme.ansi[8] },
+      new_tab_hover = { bg_color = bg:lighten(0.06), fg_color = scheme.foreground },
+    },
+  }
+end
+
+-- Show the current directory name in the tab title.
+wezterm.on('format-tab-title', function(tab)
+  local cwd = tab.active_pane.current_working_dir
+  local name = tab.active_pane.title
+  if cwd and cwd.file_path then
+    local path = cwd.file_path:gsub('/$', '')
+    name = path == os.getenv('HOME') and '~' or path:match('[^/]+$') or '/'
+  end
+  return ' ' .. (tab.tab_index + 1) .. ': ' .. name .. ' '
+end)
+
 -- Ligatures are enabled by default in WezTerm.
 config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 14.0
