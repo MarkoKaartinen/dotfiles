@@ -13,6 +13,7 @@ See [BACKLOG.md](BACKLOG.md) for tools, applications, and ideas being considered
 
 | Tool | Purpose | Installation |
 |------|---------|--------------|
+| WezTerm | Terminal emulator | [Instructions](https://wezterm.org/installation.html) |
 | Zed | Code editor | [Instructions](https://zed.dev/docs/installation) |
 | Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
 | Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |
@@ -33,6 +34,11 @@ No platform-specific configuration yet.
 
 ## Symlinks
 
-No symlinks configured yet.
+Manual symlink commands, run from the repository root.
 
-Manual symlink commands will be documented as configurations are added.
+### WezTerm
+
+```sh
+mkdir -p ~/.config/wezterm
+ln -s "$PWD/wezterm/wezterm.lua" ~/.config/wezterm/wezterm.lua
+```
