@@ -24,6 +24,13 @@ See [BACKLOG.md](BACKLOG.md) for tools, applications, and ideas being considered
 |------|---------|--------------|
 | Homebrew | Package manager | [brew.sh](https://brew.sh/) |
 
+Homebrew packages are listed in [macos/Brewfile](macos/Brewfile).
+Install them manually:
+
+```sh
+brew bundle --file=macos/Brewfile
+```
+
 ### Linux
 
 No platform-specific configuration yet.

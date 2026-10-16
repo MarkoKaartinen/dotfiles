@@ -90,6 +90,12 @@ BACKLOG.md lists tools by status:
 - Rejected `- [x] ~~Name~~`: evaluated but not adopted.
   Keep the entry and state the reason.
 
+## Homebrew
+
+- macos/Brewfile lists only Adopted tools installed with Homebrew.
+- Add a tool to the Brewfile when it is adopted.
+- Do not list Candidate tools or unrelated installed packages.
+
 ## AI tools
 
 - Share reusable skills between Codex and Claude Code.
