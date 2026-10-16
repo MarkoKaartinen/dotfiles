@@ -53,6 +53,22 @@ wezterm.on('format-tab-title', function(tab)
   return ' ' .. (tab.tab_index + 1) .. ': ' .. name .. ' '
 end)
 
+-- Always start in the home directory. New tabs and windows would otherwise
+-- inherit the current pane's directory, so spawn them with an explicit cwd.
+config.default_cwd = wezterm.home_dir
+local home_tab = wezterm.action.SpawnCommandInNewTab { cwd = wezterm.home_dir }
+config.keys = {
+  { key = 't', mods = 'CTRL|SHIFT', action = home_tab },
+  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnCommandInNewWindow { cwd = wezterm.home_dir } },
+}
+wezterm.on('new-tab-button-click', function(window, pane, button, default_action)
+  if button == 'Left' then
+    window:perform_action(home_tab, pane)
+    return false
+  end
+  return true
+end)
+
 -- Native Wayland draws a gray client-side frame above the window on Hyprland.
 config.enable_wayland = false
 
