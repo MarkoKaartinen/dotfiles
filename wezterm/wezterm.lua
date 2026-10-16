@@ -20,4 +20,8 @@ end
 
 config.default_prog = { find_fish(), '-l' }
 
+config.color_scheme = 'nord'
+-- Ligatures are enabled by default in WezTerm.
+config.font = wezterm.font 'Liga SFMono Nerd Font'
+
 return config
