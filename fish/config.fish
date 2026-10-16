@@ -8,6 +8,8 @@ fish_add_path -g ~/.composer/vendor/bin
 fish_add_path -g ~/.local/bin
 
 alias a="php artisan"
+alias pest="./vendor/bin/pest"
+alias pint="./vendor/bin/pint"
 
 if test (uname) = Darwin
     # Herd manages PHP and Node; its nvm has no fish integration, so use a fixed version.
