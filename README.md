@@ -17,7 +17,6 @@ See [BACKLOG.md](BACKLOG.md) for tools, applications, and ideas being considered
 | Fish | Shell | [Instructions](https://fishshell.com/) |
 | Oh My Posh | Shell prompt | [Instructions](https://ohmyposh.dev/docs/installation/macos) |
 | Fastfetch | System information | [Instructions](https://github.com/fastfetch-cli/fastfetch) |
-| SF Mono Nerd Font Ligaturized | Terminal font | [Instructions](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized) |
 | Zed | Code editor | [Instructions](https://zed.dev/docs/installation) |
 | Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
 | Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |

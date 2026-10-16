@@ -1,5 +1,4 @@
 cask "wezterm"
 brew "fish"
-cask "font-sf-mono-nerd-font-ligaturized"
 brew "oh-my-posh"
 brew "fastfetch"
