@@ -7,6 +7,8 @@ end
 fish_add_path -g ~/.composer/vendor/bin
 fish_add_path -g ~/.local/bin
 
+alias a="php artisan"
+
 if test (uname) = Darwin
     # Herd manages PHP and Node; its nvm has no fish integration, so use a fixed version.
     set -l herd "$HOME/Library/Application Support/Herd"
