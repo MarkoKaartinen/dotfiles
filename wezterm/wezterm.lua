@@ -58,7 +58,7 @@ config.enable_wayland = false
 
 -- Ligatures are enabled by default in WezTerm.
 config.font = wezterm.font 'JetBrains Mono'
-config.font_size = 14.0
+config.font_size = wezterm.target_triple:find('linux') and 13.0 or 14.0
 config.line_height = 1.2
 
 -- Open at a fixed size so the window does not resize after the shell starts.
