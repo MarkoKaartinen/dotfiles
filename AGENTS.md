@@ -81,6 +81,15 @@ Treat the Git commit history as the project's changelog.
 - Keep experimental configuration separate from active configuration.
 - Introduce symbolic links incrementally and safely.
 
+## Backlog
+
+BACKLOG.md lists tools by status:
+
+- Candidate `- [ ]`: not yet evaluated or adopted.
+- Adopted `- [x]`: in use. Must also be listed in README.md.
+- Rejected `- [x] ~~Name~~`: evaluated but not adopted.
+  Keep the entry and state the reason.
+
 ## AI tools
 
 - Share reusable skills between Codex and Claude Code.
