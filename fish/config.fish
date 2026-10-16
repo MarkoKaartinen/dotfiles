@@ -12,6 +12,9 @@ if test (uname) = Darwin
     set -l herd "$HOME/Library/Application Support/Herd"
     fish_add_path -g "$herd/config/nvm/versions/node/v22.14.0/bin"
     fish_add_path -g "$herd/bin"
+
+    alias sites="cd ~/Sites"
+    alias projects="cd ~/Projects"
 end
 
 # Oh My Posh
