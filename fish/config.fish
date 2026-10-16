@@ -19,6 +19,7 @@ if test (uname) = Darwin
 
     alias sites="cd ~/Sites"
     alias projects="cd ~/Projects"
+    alias sshkey="pbcopy < ~/.ssh/id_rsa.pub"
 end
 
 # Oh My Posh
