@@ -28,3 +28,12 @@ if type -q oh-my-posh
         echo
     end
 end
+
+# Greeting
+if type -q fastfetch
+    function fish_greeting
+        fastfetch
+    end
+else
+    set -g fish_greeting
+end
