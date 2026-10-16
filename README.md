@@ -44,6 +44,13 @@ No platform-specific configuration yet.
 
 Manual symlink commands, run from the repository root.
 
+### Fish
+
+```sh
+mkdir -p ~/.config/fish
+ln -s "$PWD/fish/config.fish" ~/.config/fish/config.fish
+```
+
 ### WezTerm
 
 ```sh
