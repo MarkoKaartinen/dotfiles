@@ -16,5 +16,15 @@ end
 
 # Oh My Posh
 if type -q oh-my-posh
-    oh-my-posh init fish --config easy-term | source
+    oh-my-posh init fish --config powerlevel10k_rainbow | source
+
+    # Re-render the prompt on window resize so the right side stays aligned
+    function _repaint_prompt_on_resize --on-signal WINCH
+        omp_repaint_prompt
+    end
+
+    # Blank line above the prompt
+    function _blank_line_before_prompt --on-event fish_prompt
+        echo
+    end
 end
