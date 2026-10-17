@@ -24,7 +24,7 @@ end
 
 # Oh My Posh
 if type -q oh-my-posh
-    oh-my-posh init fish --config powerlevel10k_rainbow | source
+    oh-my-posh init fish --config ~/.config/oh-my-posh/theme.json | source
 
     # Re-render the prompt on window resize so the right side stays aligned
     function _repaint_prompt_on_resize --on-signal WINCH
