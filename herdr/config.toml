@@ -1,0 +1,18 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[terminal]
+default_shell = "fish"
+
+[keys]
+prefix = "ctrl+a"
+detach = "prefix+d"
+
+[ui]
+status_indicators = "symbols"
+
+[ui.sound]
+enabled = false
