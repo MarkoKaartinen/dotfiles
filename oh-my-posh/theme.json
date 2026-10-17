@@ -36,10 +36,6 @@
           "type": "php",
           "style": "plain",
           "template": "  {{ .Full }} ",
-          "cache": {
-            "duration": "168h",
-            "strategy": "folder"
-          },
           "foreground": "#777BB4"
         },
         {
