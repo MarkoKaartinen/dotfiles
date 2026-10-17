@@ -66,6 +66,22 @@ config.keys = {
 if wezterm.target_triple:find('darwin') then
   table.insert(config.keys, { key = 't', mods = 'SUPER', action = home_tab })
   table.insert(config.keys, { key = 'n', mods = 'SUPER', action = home_window })
+
+  -- Cmd+V only pastes text. If the clipboard holds an image and no text, send
+  -- Ctrl+V instead so that apps such as Claude Code can read the image.
+  table.insert(config.keys, {
+    key = 'v',
+    mods = 'SUPER',
+    action = wezterm.action_callback(function(window, pane)
+      local ok, info = wezterm.run_child_process { 'osascript', '-e', 'clipboard info' }
+      local has_text = info:find('utf8', 1, true) or info:find('Unicode text', 1, true)
+      if ok and info:find('PNGf', 1, true) and not has_text then
+        window:perform_action(wezterm.action.SendKey { key = 'v', mods = 'CTRL' }, pane)
+      else
+        window:perform_action(wezterm.action.PasteFrom 'Clipboard', pane)
+      end
+    end),
+  })
 end
 wezterm.on('new-tab-button-click', function(window, pane, button, default_action)
   if button == 'Left' then
