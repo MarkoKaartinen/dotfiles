@@ -7,6 +7,9 @@ end
 fish_add_path -g ~/.composer/vendor/bin
 fish_add_path -g ~/.local/bin
 
+# Editor
+set -gx EDITOR nano
+
 alias a="php artisan"
 alias pest="./vendor/bin/pest"
 alias pint="./vendor/bin/pint"
