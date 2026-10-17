@@ -17,6 +17,7 @@ See [BACKLOG.md](BACKLOG.md) for tools, applications, and ideas being considered
 | Fish | Shell | [Instructions](https://fishshell.com/) |
 | Oh My Posh | Shell prompt | [Instructions](https://ohmyposh.dev/docs/installation/macos) |
 | Fastfetch | System information | [Instructions](https://github.com/fastfetch-cli/fastfetch) |
+| Herdr | Terminal multiplexer | [Instructions](https://herdr.dev/docs/install/) |
 | Zed | Code editor | [Instructions](https://zed.dev/docs/installation) |
 | Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
 | Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |
@@ -58,4 +59,11 @@ ln -s "$PWD/fish/config.fish" ~/.config/fish/config.fish
 ```sh
 mkdir -p ~/.config/wezterm
 ln -s "$PWD/wezterm/wezterm.lua" ~/.config/wezterm/wezterm.lua
+```
+
+### Herdr
+
+```sh
+mkdir -p ~/.config/herdr
+ln -s "$PWD/herdr/config.toml" ~/.config/herdr/config.toml
 ```

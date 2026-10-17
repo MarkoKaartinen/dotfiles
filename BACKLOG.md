@@ -7,7 +7,7 @@ Tools, ideas, and applications to explore, try, or adopt. Nothing is installed a
 - [x] [WezTerm](https://wezfurlong.org/wezterm/) - Terminal emulator
 - [x] [Fish](https://fishshell.com/) - Shell
 - [x] [Oh My Posh](https://ohmyposh.dev/) - Shell prompt
-- [ ] [Herdr](https://github.com/motionharvest/herdr) - Terminal multiplexer
+- [x] [Herdr](https://herdr.dev/docs/install/) - Terminal multiplexer
 
 ## CLI utilities
 
