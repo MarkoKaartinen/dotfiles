@@ -54,6 +54,13 @@ mkdir -p ~/.config/fish
 ln -s "$PWD/fish/config.fish" ~/.config/fish/config.fish
 ```
 
+### Oh My Posh
+
+```sh
+mkdir -p ~/.config/oh-my-posh
+ln -s "$PWD/oh-my-posh/theme.json" ~/.config/oh-my-posh/theme.json
+```
+
 ### WezTerm
 
 ```sh
