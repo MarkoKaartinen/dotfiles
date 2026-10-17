@@ -19,6 +19,7 @@ Tools, ideas, and applications to explore, try, or adopt. Nothing is installed a
 - [ ] [fd](https://github.com/sharkdp/fd) - File search
 - [ ] [delta](https://github.com/dandavison/delta) - Git diff viewer
 - [ ] [bottom](https://github.com/ClementTsang/bottom) - System monitor
+- [ ] [just](https://github.com/casey/just) - Command runner
 
 ## AI
 
