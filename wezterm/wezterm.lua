@@ -105,6 +105,9 @@ wezterm.on('new-tab-button-click', function(window, pane, button, default_action
   return true
 end)
 
+-- Disable audible bell
+config.audible_bell = 'Disabled'
+
 -- Native Wayland draws a gray client-side frame above the window on Hyprland.
 config.enable_wayland = false
 
