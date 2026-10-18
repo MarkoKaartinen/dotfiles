@@ -42,8 +42,11 @@ if scheme then
   }
 end
 
--- Show the current directory name in the tab title.
+-- Show a manually set tab title, or else the current directory name.
 wezterm.on('format-tab-title', function(tab)
+  if tab.tab_title ~= '' then
+    return ' ' .. (tab.tab_index + 1) .. ': ' .. tab.tab_title .. ' '
+  end
   local cwd = tab.active_pane.current_working_dir
   local name = tab.active_pane.title
   if cwd and cwd.file_path then
@@ -58,14 +61,25 @@ end)
 config.default_cwd = wezterm.home_dir
 local home_tab = wezterm.action.SpawnCommandInNewTab { cwd = wezterm.home_dir }
 local home_window = wezterm.action.SpawnCommandInNewWindow { cwd = wezterm.home_dir }
+-- Rename the current tab. An empty name restores the directory name.
+local rename_tab = wezterm.action.PromptInputLine {
+  description = 'Tab name (empty resets)',
+  action = wezterm.action_callback(function(window, pane, line)
+    if line then
+      window:active_tab():set_title(line)
+    end
+  end),
+}
 config.keys = {
   { key = 't', mods = 'CTRL|SHIFT', action = home_tab },
   { key = 'n', mods = 'CTRL|SHIFT', action = home_window },
+  { key = 'r', mods = 'CTRL|SHIFT', action = rename_tab },
 }
 -- macOS uses Cmd for the same shortcuts.
 if wezterm.target_triple:find('darwin') then
   table.insert(config.keys, { key = 't', mods = 'SUPER', action = home_tab })
   table.insert(config.keys, { key = 'n', mods = 'SUPER', action = home_window })
+  table.insert(config.keys, { key = 'r', mods = 'SUPER|SHIFT', action = rename_tab })
 
   -- Cmd+V only pastes text. If the clipboard holds an image and no text, send
   -- Ctrl+V instead so that apps such as Claude Code can read the image.
