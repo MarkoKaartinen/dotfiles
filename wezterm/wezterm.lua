@@ -105,6 +105,27 @@ wezterm.on('new-tab-button-click', function(window, pane, button, default_action
   return true
 end)
 
+-- Open hyperlinks only with Cmd+click (Ctrl+click elsewhere), not a plain click.
+local link_mod = wezterm.target_triple:find('darwin') and 'SUPER' or 'CTRL'
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'NONE',
+    action = wezterm.action.CompleteSelection 'ClipboardAndPrimarySelection',
+  },
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = link_mod,
+    action = wezterm.action.OpenLinkAtMouseCursor,
+  },
+  -- Swallow the Down event so that programs do not see a stray click.
+  {
+    event = { Down = { streak = 1, button = 'Left' } },
+    mods = link_mod,
+    action = wezterm.action.Nop,
+  },
+}
+
 -- Disable audible bell
 config.audible_bell = 'Disabled'
 
