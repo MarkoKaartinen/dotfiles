@@ -74,3 +74,10 @@ ln -s "$PWD/wezterm/wezterm.lua" ~/.config/wezterm/wezterm.lua
 mkdir -p ~/.config/herdr
 ln -s "$PWD/herdr/config.toml" ~/.config/herdr/config.toml
 ```
+
+### Fastfetch
+
+```sh
+mkdir -p ~/.config/fastfetch
+ln -s "$PWD/fastfetch/config.jsonc" ~/.config/fastfetch/config.jsonc
+```

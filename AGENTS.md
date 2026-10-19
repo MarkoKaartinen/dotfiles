@@ -76,6 +76,7 @@ Treat the Git commit history as the project's changelog.
 
 - Prefer native configuration formats.
 - Keep configuration readable and maintainable.
+- Prefer a tool's own config file over long command-line flags in shell config.
 - NEVER commit secrets, credentials or private keys.
 - Do not add configuration for tools that are not yet in use.
 - Keep experimental configuration separate from active configuration.
