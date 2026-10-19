@@ -22,7 +22,7 @@ Tools, ideas, and applications to explore, try, or adopt. Nothing is installed a
 - [ ] [just](https://github.com/casey/just) - Command runner
 - [ ] [lazygit](https://github.com/jesseduffield/lazygit) - Git terminal UI
 - [ ] [atuin](https://github.com/atuinsh/atuin) - Shell history
-- [ ] [doggo](https://github.com/mr-karan/doggo) - DNS client
+- [x] [doggo](https://github.com/mr-karan/doggo) - DNS client
 
 ## AI
 

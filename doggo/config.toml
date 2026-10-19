@@ -1,0 +1,3 @@
+# https://doggo.mrkaran.dev/docs/reference/config/
+strategy = "first"
+timeout = "5s"

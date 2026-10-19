@@ -19,6 +19,7 @@ See [BACKLOG.md](BACKLOG.md) for tools, applications, and ideas being considered
 | Fastfetch | System information | [Instructions](https://github.com/fastfetch-cli/fastfetch) |
 | Herdr | Terminal multiplexer | [Instructions](https://herdr.dev/docs/install/) |
 | Herdr Automatic Rename | Herdr tab naming plugin | [Instructions](https://github.com/qu8n/herdr-automatic-rename) |
+| Doggo | DNS client | [Instructions](https://doggo.mrkaran.dev/docs/installation/) |
 | Zed | Code editor | [Instructions](https://zed.dev/docs/installation) |
 | Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
 | Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |
@@ -93,6 +94,12 @@ ln -s "$PWD/herdr-automatic-rename/config.sh" ~/.config/herdr-automatic-rename/c
 ```sh
 mkdir -p ~/.config/fastfetch
 ln -s "$PWD/fastfetch/config.jsonc" ~/.config/fastfetch/config.jsonc
+```
+
+### Doggo
+
+```sh
+ln -s "$PWD/doggo/config.toml" ~/.doggo.toml
 ```
 
 ### Git

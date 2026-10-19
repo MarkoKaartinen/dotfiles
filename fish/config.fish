@@ -52,3 +52,7 @@ if type -q fastfetch
 else
     set -g fish_greeting
 end
+
+# Doggo: query the common record types by default.
+# Set here because the config file `type` list returns every record twice (doggo 1.4.1).
+set -gx DOGGO_TYPE A,AAAA,NS,SOA,MX,TXT,CAA
