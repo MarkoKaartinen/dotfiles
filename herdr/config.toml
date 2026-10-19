@@ -18,4 +18,4 @@ status_indicators = "symbols"
 enabled = false
 
 [ui.toast]
-delivery = "terminal"
+delivery = "off"
