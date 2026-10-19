@@ -80,6 +80,7 @@ if wezterm.target_triple:find('darwin') then
   table.insert(config.keys, { key = 't', mods = 'SUPER', action = home_tab })
   table.insert(config.keys, { key = 'n', mods = 'SUPER', action = home_window })
   table.insert(config.keys, { key = 'r', mods = 'SUPER|SHIFT', action = rename_tab })
+  table.insert(config.keys, { key = 'p', mods = 'SUPER', action = wezterm.action.ActivateCommandPalette })
 
   -- Cmd+V only pastes text. If the clipboard holds an image and no text, send
   -- Ctrl+V instead so that apps such as Claude Code can read the image.
@@ -97,6 +98,22 @@ if wezterm.target_triple:find('darwin') then
     end),
   })
 end
+-- Splitting only halves a pane, so make three equal rows with 1/3 + 1/2 of the rest.
+wezterm.on('augment-command-palette', function()
+  return {
+    {
+      brief = 'Split into three',
+      doc = 'Split the active pane into three equal rows',
+      action = wezterm.action_callback(function(window, pane)
+        -- default_cwd is home, so pass the pane's directory explicitly.
+        local cwd = pane:get_current_working_dir()
+        cwd = cwd and cwd.file_path or wezterm.home_dir
+        local middle = pane:split { direction = 'Bottom', size = 2 / 3, cwd = cwd }
+        middle:split { direction = 'Bottom', size = 0.5, cwd = cwd }
+      end),
+    },
+  }
+end)
 wezterm.on('new-tab-button-click', function(window, pane, button, default_action)
   if button == 'Left' then
     window:perform_action(home_tab, pane)
