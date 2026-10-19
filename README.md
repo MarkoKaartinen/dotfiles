@@ -76,14 +76,9 @@ mkdir -p ~/.config/herdr
 ln -s "$PWD/herdr/config.toml" ~/.config/herdr/config.toml
 ```
 
-### Fastfetch
+#### Plugins
 
-```sh
-mkdir -p ~/.config/fastfetch
-ln -s "$PWD/fastfetch/config.jsonc" ~/.config/fastfetch/config.jsonc
-```
-
-### Herdr Automatic Rename
+##### Automatic Rename
 
 Install the plugin, then link the config:
 
@@ -91,4 +86,11 @@ Install the plugin, then link the config:
 herdr plugin install qu8n/herdr-automatic-rename --yes
 mkdir -p ~/.config/herdr-automatic-rename
 ln -s "$PWD/herdr-automatic-rename/config.sh" ~/.config/herdr-automatic-rename/config.sh
+```
+
+### Fastfetch
+
+```sh
+mkdir -p ~/.config/fastfetch
+ln -s "$PWD/fastfetch/config.jsonc" ~/.config/fastfetch/config.jsonc
 ```
