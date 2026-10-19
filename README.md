@@ -18,6 +18,7 @@ See [BACKLOG.md](BACKLOG.md) for tools, applications, and ideas being considered
 | Oh My Posh | Shell prompt | [Instructions](https://ohmyposh.dev/docs/installation/macos) |
 | Fastfetch | System information | [Instructions](https://github.com/fastfetch-cli/fastfetch) |
 | Herdr | Terminal multiplexer | [Instructions](https://herdr.dev/docs/install/) |
+| Herdr Automatic Rename | Herdr tab naming plugin | [Instructions](https://github.com/qu8n/herdr-automatic-rename) |
 | Zed | Code editor | [Instructions](https://zed.dev/docs/installation) |
 | Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
 | Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |
@@ -80,4 +81,14 @@ ln -s "$PWD/herdr/config.toml" ~/.config/herdr/config.toml
 ```sh
 mkdir -p ~/.config/fastfetch
 ln -s "$PWD/fastfetch/config.jsonc" ~/.config/fastfetch/config.jsonc
+```
+
+### Herdr Automatic Rename
+
+Install the plugin, then link the config:
+
+```sh
+herdr plugin install qu8n/herdr-automatic-rename --yes
+mkdir -p ~/.config/herdr-automatic-rename
+ln -s "$PWD/herdr-automatic-rename/config.sh" ~/.config/herdr-automatic-rename/config.sh
 ```
