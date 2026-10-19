@@ -43,7 +43,11 @@ end
 # Greeting
 if type -q fastfetch
     function fish_greeting
-        fastfetch
+        if test $COLUMNS -lt 100
+            fastfetch --logo none
+        else
+            fastfetch
+        end
     end
 else
     set -g fish_greeting
