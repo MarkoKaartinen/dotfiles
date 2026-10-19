@@ -1,0 +1,23 @@
+#!/bin/sh
+# Remove AI attribution lines and trailing blank lines from the commit message.
+tmp=$(mktemp) || exit 0
+awk '
+BEGIN { ai = "claude|anthropic|openai|chatgpt|copilot|gemini|cursor|codex|aider|devin|windsurf" }
+{
+  l = tolower($0)
+  if (l ~ /^(claude-session|assisted-by|generated-by|ai-assisted|ai-generated):/) next
+  if (l ~ ("^co-authored-by:.*(" ai ")")) next
+  if (l ~ /generated with.*(claude|codex|cursor|copilot)/) next
+  lines[++n] = $0
+}
+END {
+  while (n > 0 && lines[n] ~ /^[ \t\r]*$/) n--
+  for (i = 1; i <= n; i++) print lines[i]
+}' "$1" > "$tmp" && cat "$tmp" > "$1"
+rm -f "$tmp"
+
+# core.hooksPath hides the repo's own hook, so run it here.
+repo_hook=$(git rev-parse --git-dir)/hooks/commit-msg
+if [ -x "$repo_hook" ]; then
+  exec "$repo_hook" "$@"
+fi

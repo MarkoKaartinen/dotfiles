@@ -94,3 +94,25 @@ ln -s "$PWD/herdr-automatic-rename/config.sh" ~/.config/herdr-automatic-rename/c
 mkdir -p ~/.config/fastfetch
 ln -s "$PWD/fastfetch/config.jsonc" ~/.config/fastfetch/config.jsonc
 ```
+
+### Git
+
+The `commit-msg` hook removes AI attribution lines (such as `Co-Authored-By: Claude`)
+from commit messages. It also runs the repository's own `commit-msg` hook, if any.
+
+Setting `core.hooksPath` applies to every repository and disables their other hooks
+(`pre-commit` etc.). Check the current value first:
+
+```sh
+git config --global --get core.hooksPath
+```
+
+If it is empty, enable the hook:
+
+```sh
+mkdir -p ~/.config/git/hooks
+ln -s "$PWD/git/hooks/commit-msg" ~/.config/git/hooks/commit-msg
+git config --global core.hooksPath ~/.config/git/hooks
+```
+
+Commits made with `--no-verify` skip the hook.
