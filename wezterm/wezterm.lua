@@ -154,7 +154,7 @@ config.font = wezterm.font 'JetBrains Mono'
 config.font_size = wezterm.target_triple:find('linux') and 13.0 or 14.0
 config.line_height = 1.2
 
-config.window_padding = { left = '1cell', right = '1cell', top = '0.5cell', bottom = '0.5cell' }
+config.window_padding = { left = '1.5cell', right = '1.5cell', top = '0.5cell', bottom = '0.5cell' }
 
 -- Open at a fixed size so the window does not resize after the shell starts.
 config.initial_cols = 140
