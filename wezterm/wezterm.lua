@@ -154,6 +154,9 @@ config.font = wezterm.font 'JetBrains Mono'
 config.font_size = wezterm.target_triple:find('linux') and 13.0 or 14.0
 config.line_height = 1.2
 
+-- Horizontal padding only; vertical stays flush with the tab bar.
+config.window_padding = { left = '1cell', right = '1cell', top = 0, bottom = 0 }
+
 -- Open at a fixed size so the window does not resize after the shell starts.
 config.initial_cols = 140
 config.initial_rows = 36
