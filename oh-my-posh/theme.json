@@ -9,6 +9,12 @@
       "newline": false,
       "segments": [
         {
+          "type": "session",
+          "style": "plain",
+          "foreground": "#E5C07B",
+          "template": "{{ if .SSHSession }}{{ .HostName }} {{ end }}"
+        },
+        {
           "type": "path",
           "style": "plain",
           "foreground": "#56B6C2",
