@@ -61,6 +61,10 @@ Herdr does not copy config or plugins to remote machines.
 
 Try `fish` by hand before making it the login shell, see [Login shell](#login-shell).
 
+Ubuntu prints its own login message (MOTD, update notices, `Last login`) before
+the shell starts. To hide it for the current user only, run `touch ~/.hushlogin`
+(revert with `rm ~/.hushlogin`). Update and reboot notices are hidden too.
+
 #### Connect from the Mac
 
 Check that plain `ssh <host>` works, then save the server in the local Herdr:
