@@ -41,6 +41,37 @@ brew bundle --file=macos/Brewfile
 
 No platform-specific configuration yet.
 
+### Linux server
+
+Console-only Ubuntu servers. Only the selected tools below are deployed;
+desktop tools (WezTerm, Zed) and the macOS configuration are not.
+
+| Tool | Purpose | Installation |
+|------|---------|--------------|
+| Fish | Shell, with its own per-machine history | `apt install fish` ([PPA](https://launchpad.net/~fish-shell/+archive/ubuntu/release-4) for a newer version) |
+| Herdr | Terminal multiplexer and remote session server | `curl -fsSL https://herdr.dev/install.sh \| sh` |
+| Doggo | DNS client | [Instructions](https://doggo.mrkaran.dev/docs/installation/) |
+| Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
+| Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |
+
+Clone the repository to `~/.dotfiles` and link the configuration with the
+[Symlinks](#symlinks) commands for Fish, Herdr (and its plugin), Doggo and Git.
+`herdr/config.toml` sets Fish as the default shell, so install Fish first.
+Herdr does not copy config or plugins to remote machines.
+
+Check Fish before making it the login shell (`chsh -s "$(command -v fish)"`).
+
+#### Connect from the Mac
+
+Check that plain `ssh <host>` works, then save the server in the local Herdr:
+
+```sh
+herdr machine add <host>
+herdr machine status
+```
+
+Use `ForwardAgent yes` in `~/.ssh/config` for trusted hosts if Git needs the local key.
+
 ### Windows
 
 No platform-specific configuration yet.
