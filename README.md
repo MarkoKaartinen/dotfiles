@@ -59,7 +59,7 @@ Clone the repository to `~/.dotfiles` and link the configuration with the
 `herdr/config.toml` sets Fish as the default shell, so install Fish first.
 Herdr does not copy config or plugins to remote machines.
 
-Check Fish before making it the login shell (`chsh -s "$(command -v fish)"`).
+Try `fish` by hand before making it the login shell, see [Login shell](#login-shell).
 
 #### Connect from the Mac
 
@@ -86,6 +86,26 @@ Manual symlink commands, run from the repository root.
 mkdir -p ~/.config/fish
 ln -s "$PWD/fish/config.fish" ~/.config/fish/config.fish
 ```
+
+#### Login shell
+
+Optional. Start `fish` by hand first and check that it works.
+
+Linux (the apt package is already listed in `/etc/shells`):
+
+```sh
+chsh -s "$(command -v fish)"
+```
+
+macOS (Homebrew Fish must be added to `/etc/shells` first):
+
+```sh
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+```
+
+Log out and back in, then check with `echo $SHELL`.
+To revert, run `chsh -s /bin/bash` (Linux) or `chsh -s /bin/zsh` (macOS).
 
 ### Oh My Posh
 
