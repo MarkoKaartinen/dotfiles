@@ -15,6 +15,9 @@ detach = "prefix+d"
 prompt_new_tab_name = false
 status_indicators = "symbols"
 
+[ui.sidebar.agents]
+rows = [["state_icon", "machine", "workspace"], ["agent", "tab"]]
+
 [ui.sound]
 enabled = false
 
