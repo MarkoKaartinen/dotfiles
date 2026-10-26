@@ -9,6 +9,10 @@ Tools, ideas, and applications to explore, try, or adopt. Nothing is installed a
 - [x] [Oh My Posh](https://ohmyposh.dev/) - Shell prompt
 - [x] [Herdr](https://herdr.dev/docs/install/) - Terminal multiplexer
 
+## Development
+
+- [x] [fnm](https://github.com/Schniz/fnm) - Node.js version manager
+
 ## CLI utilities
 
 - [ ] [zoxide](https://github.com/ajeetdsouza/zoxide) - Directory navigation

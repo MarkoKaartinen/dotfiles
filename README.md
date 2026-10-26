@@ -37,6 +37,9 @@ Install them manually:
 brew bundle --file=macos/Brewfile
 ```
 
+Node.js is currently provided by Herd, with a fixed version in `fish/config.fish`.
+The plan is to move to fnm (`brew install fnm`) and drop the Herd path.
+
 ### Linux
 
 No platform-specific configuration yet.
@@ -50,6 +53,7 @@ desktop tools (WezTerm, Zed) and the macOS configuration are not.
 |------|---------|--------------|
 | Fish | Shell, with its own per-machine history | `apt install fish` ([PPA](https://launchpad.net/~fish-shell/+archive/ubuntu/release-4) for a newer version) |
 | Herdr | Terminal multiplexer and remote session server | `curl -fsSL https://herdr.dev/install.sh \| sh` |
+| fnm | Node.js version manager | [Instructions](https://github.com/Schniz/fnm#installation) |
 | Doggo | DNS client | [Instructions](https://doggo.mrkaran.dev/docs/installation/) |
 | Codex | AI coding agent | [Instructions](https://learn.chatgpt.com/docs/codex/cli) |
 | Claude Code | AI coding agent | [Instructions](https://code.claude.com/docs/en/overview) |
@@ -75,6 +79,14 @@ herdr machine status
 ```
 
 Use `ForwardAgent yes` in `~/.ssh/config` for trusted hosts if Git needs the local key.
+
+### Node.js
+
+fnm is the recommended way to manage Node.js. It is used on the Linux servers
+and planned for macOS. `fish/config.fish` loads it only when `fnm` is installed,
+so the same config works on machines without it. The fnm install script appends
+to the shell config by default; with the symlinked Fish config, run it with
+`--skip-shell` to keep the repository file unchanged.
 
 ### Windows
 
