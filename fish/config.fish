@@ -25,6 +25,11 @@ if test (uname) = Darwin
     alias sshkey="pbcopy < ~/.ssh/id_rsa.pub"
 end
 
+# Node.js (fnm)
+if type -q fnm
+    fnm env --use-on-cd --shell fish | source
+end
+
 # Oh My Posh
 if type -q oh-my-posh
     oh-my-posh init fish --config ~/.config/oh-my-posh/theme.json | source
