@@ -5,6 +5,7 @@ end
 
 # PATH (fish_add_path skips directories that do not exist)
 fish_add_path -g ~/.composer/vendor/bin
+fish_add_path -g ~/.config/composer/vendor/bin
 fish_add_path -g ~/.local/bin
 
 # Editor

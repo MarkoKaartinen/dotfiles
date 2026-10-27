@@ -88,6 +88,19 @@ so the same config works on machines without it. The fnm install script appends
 to the shell config by default; with the symlinked Fish config, run it with
 `--skip-shell` to keep the repository file unchanged.
 
+### Laravel installer
+
+Install with Composer:
+
+```sh
+composer global require laravel/installer
+```
+
+Composer puts global binaries in `~/.composer/vendor/bin` on macOS and in
+`~/.config/composer/vendor/bin` on Linux (when `~/.composer` does not exist).
+`fish/config.fish` adds both to `PATH`, and `fish_add_path` skips the one that
+is missing. On macOS with Herd, the `laravel` command already comes from Herd.
+
 ### Windows
 
 No platform-specific configuration yet.

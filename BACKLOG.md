@@ -12,6 +12,7 @@ Tools, ideas, and applications to explore, try, or adopt. Nothing is installed a
 ## Development
 
 - [x] [fnm](https://github.com/Schniz/fnm) - Node.js version manager
+- [x] [Laravel installer](https://laravel.com/docs/installation) - Laravel project creator
 
 ## CLI utilities
 
