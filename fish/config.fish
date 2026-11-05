@@ -18,7 +18,7 @@ alias pint="./vendor/bin/pint"
 if test (uname) = Darwin
     # Herd manages PHP and Node; its nvm has no fish integration, so use a fixed version.
     set -l herd "$HOME/Library/Application Support/Herd"
-    fish_add_path -g "$herd/config/nvm/versions/node/v22.14.0/bin"
+    fish_add_path -g "$herd/config/nvm/versions/node/v22.23.4/bin"
     fish_add_path -g "$herd/bin"
 
     alias sites="cd ~/Sites"
